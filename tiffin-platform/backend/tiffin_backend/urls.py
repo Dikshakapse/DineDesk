@@ -27,3 +27,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),  # 👈 This will connect users app
 ]
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),        # ✅ This enables the admin panel
+    path('', include('core.urls')),         # Your core app
+]
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('core.urls')),  # 👈 this includes your app's URLs
+]
